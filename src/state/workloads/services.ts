@@ -14,9 +14,9 @@ export class WorkloadService {
   }
 
   private completeWorkload(work: Work) {
-    work.status = this.counter % 2 
-      ? 'SUCCESS'
-      : 'FAILURE';
+    work.status = work.id % 2 
+      ? 'FAILURE'
+      : 'SUCCESS';
   }
 
 
