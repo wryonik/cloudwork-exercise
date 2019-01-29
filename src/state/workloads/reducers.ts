@@ -16,10 +16,10 @@ const initialState: Store = {};
 
 export const reducer = (state: Store = initialState, action: Action): Store => {
   switch (action.type) {
-    case 'WORKLOAD_CREATE':            
+    case 'WORKLOAD_CREATED':            
       return { 
-        [action.payload.workloadId]: {
-          id: action.payload.workloadId,
+        [action.payload.id]: {
+          id: action.payload.id,
           completeDate: action.payload.completeDate,
           status: 'WORKING',
         },
@@ -27,16 +27,16 @@ export const reducer = (state: Store = initialState, action: Action): Store => {
 
       case 'WORKLOAD_CANCEL': 
         return {
-          [action.payload.workloadId]: {
-            ...state[action.payload.workloadId],
+          [action.payload.id]: {
+            ...state[action.payload.id],
             status: 'CANCELED',
           },
         }
       
       case 'WORKLOAD_UPDATE_STATUS': 
         return {
-          [action.payload.workloadId]: {
-            ...state[action.payload.workloadId],
+          [action.payload.id]: {
+            ...state[action.payload.id],
             status: action.payload.status,
           },
         }

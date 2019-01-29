@@ -6,26 +6,26 @@ export type Action = {
     complexity: number;
   };
 } | {
-  type: 'WORKLOAD_CREATE';
+  type: 'WORKLOAD_CREATED';
   payload: {
-    workloadId: number;
+    id: number;
     complexity: number;
     completeDate: Date;
   };
 } | {
   type: 'WORKLOAD_CANCEL';
   payload: {
-    workloadId: number;
+    id: number;
   };
 } | {
   type: 'WORKLOAD_CHECK_STATUS';
   payload: {
-    workloadId: number;
+    id: number;
   };
 } | {
   type: 'WORKLOAD_UPDATE_STATUS';
   payload: {
-    workloadId: number;
+    id: number;
     status: Status;
   };
 };
@@ -37,33 +37,33 @@ export const submit = ({ complexity }: { complexity: number }): Action => ({
   },
 });
 
-export const create = ({ workloadId, complexity, completeDate }: { workloadId: number, complexity: number, completeDate: Date }): Action => ({
-  type: 'WORKLOAD_CREATE',
+export const created = ({ id, complexity, completeDate }: { id: number, complexity: number, completeDate: Date }): Action => ({
+  type: 'WORKLOAD_CREATED',
   payload: {
-    workloadId,
+    id,
     completeDate, 
     complexity,
   },
 });
 
-export const cancel = ({ workloadId }: { workloadId: number }): Action => ({
+export const cancel = ({ id }: { id: number }): Action => ({
   type: 'WORKLOAD_CANCEL',
   payload: {
-    workloadId,
+    id,
   },
 });
 
-export const checkStatus = ({ workloadId }: { workloadId: number }): Action => ({
+export const checkStatus = ({ id }: { id: number }): Action => ({
   type: 'WORKLOAD_CHECK_STATUS',
   payload: {
-    workloadId,
+    id,
   },
 });
 
-export const updateStatus = ({ workloadId, status }: { workloadId: number, status: Status }): Action => ({
+export const updateStatus = ({ id, status }: { id: number, status: Status }): Action => ({
   type: 'WORKLOAD_UPDATE_STATUS',
   payload: {
-    workloadId,
+    id,
     status,
   },
 });
