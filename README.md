@@ -1,3 +1,9 @@
+# CloudWork exercise
+
+**[Task outline document](https://www.notion.so/stepsize/CloudWork-take-home-exercise-261cef57120049ee8cfec6c4292b4cd4)**
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
