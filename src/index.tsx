@@ -51,6 +51,29 @@ setTimeout(() => workloadService.checkStatus({ id: 2 })
     .then(console.log.bind(console, 'checkStatus 2')), 200);
 
 
+/*
+// pretend epic code
+
+function createWorkload(action$) {
+  action$
+    .pipe(
+      ofType('WORKLOAD_SUBMIT'),
+      tap((action) => {
+        console.log(`workload has been submitted with complexity of ${action.payload.complexity}`)
+      }),
+      switchMap((action) => (
+        fromPromise(workloadService.create({ complexity: action.payload.complexity }))
+      )),
+      map((response) => (
+        WorkloadActions.created(response))
+      ))
+    );
+
+    return empty();
+}
+*/
+
+
 ReactDOM.render(
   (
     <Provider store={store}>
