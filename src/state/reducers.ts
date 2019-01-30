@@ -1,18 +1,17 @@
 import { combineReducers } from 'redux';
 
+import { Action } from './actions';
+
 import { 
-  Store as WorkloadsStore, 
-  Action as WorkloadActions,
+  State as WorkloadsState, 
   reducer as workloadReducer,
 } from './workloads';
 
 
-export type Action = WorkloadActions;
-
-export interface Store {
-  workloads: WorkloadsStore;
+export interface State {
+  workloads: WorkloadsState;
 }
 
-export const reducers = combineReducers<Store, Action>({
+export const reducers = combineReducers<State, Action>({
   workloads: workloadReducer,
 });

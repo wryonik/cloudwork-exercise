@@ -1,20 +1,20 @@
 import { Action } from './actions';
 import { Status } from './types';
 
-interface Entry<id extends number> {
-  id: id;
+interface Entry<Id extends number> {
+  id: Id;
   completeDate: Date;
   status: Status;
 }
 
-export type Store = { 
-  [id in number]: Entry<id>;
+export type State = { 
+  [Id in number]: Entry<Id>;
 };
   
 
-const initialState: Store = {};
+const initialState: State = {};
 
-export const reducer = (state: Store = initialState, action: Action): Store => {
+export const reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case 'WORKLOAD_CREATED':            
       return { 
