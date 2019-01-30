@@ -1,18 +1,25 @@
 import React, { PureComponent } from 'react';
 
 import { WorkloadListContainer } from '../WorkloadList';
+import { WorkloadFormContainer } from '../WorkloadForm';
 import './App.css';
 
 
 class App extends PureComponent {
   render() {
     return (
-      <div className="App">
-        <div className="App-mainColumn">
-          <WorkloadListContainer />
+      <div>
+        <h1>CloudWork</h1>
+        <hr />
+        
+        <div >
+          <WorkloadFormContainer />
         </div>
-        <div className="App-asideColumn">
-          {/* <WorkloadFormContainer /> */}
+        <hr />
+
+        <div>
+          <h2>Workloads</h2>
+          <WorkloadListContainer />
         </div>
       </div>
     );

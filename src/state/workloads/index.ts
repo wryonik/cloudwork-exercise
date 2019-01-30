@@ -1,5 +1,5 @@
 export * from './types';
 export * from './actions';
-export * from './reducers';
+export * from './reducer';
 export * from './epics';
 export * from './services';

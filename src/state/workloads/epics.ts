@@ -2,7 +2,7 @@ import { combineEpics, Epic, ofType } from 'redux-observable';
 import { map, tap, ignoreElements } from 'rxjs/operators';
 
 import { Action } from '../actions';
-import { State } from '../reducers';
+import { State } from '../reducer';
 
 
 type AppEpic = Epic<Action, Action, State>;

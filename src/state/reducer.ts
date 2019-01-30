@@ -12,6 +12,6 @@ export interface State {
   workloads: WorkloadsState;
 }
 
-export const reducers = combineReducers<State, Action>({
+export const reducer = combineReducers<State, Action>({
   workloads: workloadReducer,
 });

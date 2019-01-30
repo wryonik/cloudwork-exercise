@@ -19,6 +19,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case 'WORKLOAD_CREATED':            
       return { 
+        ...state,
         [action.payload.id]: {
           id: action.payload.id,
           complexity: action.payload.complexity,
@@ -29,6 +30,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
 
       case 'WORKLOAD_CANCEL': 
         return {
+          ...state,
           [action.payload.id]: {
             ...state[action.payload.id],
             status: 'CANCELED',
@@ -37,6 +39,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
       
       case 'WORKLOAD_UPDATE_STATUS': 
         return {
+          ...state,
           [action.payload.id]: {
             ...state[action.payload.id],
             status: action.payload.status,
