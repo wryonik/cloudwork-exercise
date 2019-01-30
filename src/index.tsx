@@ -7,7 +7,7 @@ import { createEpicMiddleware } from 'redux-observable';
 import { reducers, epics, Action, State } from './state';
 import * as WorkloadActions from './state/workloads/actions';
 import './index.css';
-import App from './App';
+import App from './components/App';
 
 
 const epicMiddleware = createEpicMiddleware<Action, Action, State>();
@@ -15,6 +15,7 @@ const store = createStore(reducers, applyMiddleware(epicMiddleware));
 
 epicMiddleware.run(epics);
 store.dispatch(WorkloadActions.submit({ complexity: 100 }));
+store.dispatch(WorkloadActions.created({ id: 0, complexity: 100, completeDate: new Date() }));
 
 
 /*

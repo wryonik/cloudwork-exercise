@@ -3,6 +3,7 @@ import { Status } from './types';
 
 interface Entry<Id extends number> {
   id: Id;
+  complexity: number;
   completeDate: Date;
   status: Status;
 }
@@ -20,6 +21,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
       return { 
         [action.payload.id]: {
           id: action.payload.id,
+          complexity: action.payload.complexity,
           completeDate: action.payload.completeDate,
           status: 'WORKING',
         },
