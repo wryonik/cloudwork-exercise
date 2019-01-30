@@ -8,6 +8,12 @@ import { State } from '../reducer';
 type AppEpic = Epic<Action, Action, State>;
 
 
+// import { WorkloadService } from './services';
+// const workloadService = new WorkloadService();
+// workloadService.create({ complexity: 1 })
+//   .then(console.log.bind(console, 'workloadService create'));
+
+
 const logWorkloadSubmissions: AppEpic = (action$, state$) => (
   action$.pipe(
     ofType('WORKLOAD_SUBMIT'),
