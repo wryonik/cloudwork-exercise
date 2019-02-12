@@ -27,15 +27,6 @@ export const reducer = (state: State = initialState, action: Action): State => {
           status: action.payload.status,
         },
       };
-
-      case 'WORKLOAD_CANCEL': 
-        return {
-          ...state,
-          [action.payload.id]: {
-            ...state[action.payload.id],
-            status: 'CANCELED',
-          },
-        }
       
       case 'WORKLOAD_UPDATE_STATUS': 
         return {
