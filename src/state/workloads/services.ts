@@ -37,7 +37,7 @@ export class WorkloadService {
     }
     this.workLoads[id] = work;
 
-    return Promise.resolve({ id, complexity, completeDate });
+    return Promise.resolve({ id, status, complexity, completeDate });
   }
 
   public checkStatus({ id }: { id: number }) {

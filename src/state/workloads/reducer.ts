@@ -24,7 +24,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
           id: action.payload.id,
           complexity: action.payload.complexity,
           completeDate: action.payload.completeDate,
-          status: 'WORKING',
+          status: action.payload.status,
         },
       };
 

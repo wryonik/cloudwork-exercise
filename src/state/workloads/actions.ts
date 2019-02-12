@@ -11,6 +11,7 @@ export type Action = {
     id: number;
     complexity: number;
     completeDate: Date;
+    status: Status;
   };
 } | {
   type: 'WORKLOAD_CANCEL';
@@ -37,10 +38,11 @@ export const submit = ({ complexity }: { complexity: number }): Action => ({
   },
 });
 
-export const created = ({ id, complexity, completeDate }: { id: number, complexity: number, completeDate: Date }): Action => ({
+export const created = ({ id, status, complexity, completeDate }: { id: number, status: Status, complexity: number, completeDate: Date }): Action => ({
   type: 'WORKLOAD_CREATED',
   payload: {
     id,
+    status,
     completeDate, 
     complexity,
   },
