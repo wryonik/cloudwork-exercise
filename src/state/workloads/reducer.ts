@@ -1,23 +1,29 @@
-import { Action } from './actions';
-import { Status } from './types';
+import { ActionType, getType } from 'typesafe-actions';
 
-interface Entry<Id extends number> {
+import { Status } from './types';
+import * as workloadActions from './actions';
+
+
+export type WorkloadsAction = ActionType<typeof workloadActions>
+
+
+interface WorkloadEntry<Id extends number> {
   id: Id;
   complexity: number;
   completeDate: Date;
   status: Status;
 }
 
-export type State = { 
-  [Id in number]: Entry<Id>;
+export type WorkloadsState = {
+  [Id in number]: WorkloadEntry<Id>;
 };
   
 
-const initialState: State = {};
+const initialState: WorkloadsState = {};
 
-export const reducer = (state: State = initialState, action: Action): State => {
+export const workloadReducer = (state: WorkloadsState = initialState, action: WorkloadsAction): WorkloadsState => {
   switch (action.type) {
-    case 'WORKLOAD_CREATED':            
+    case getType(workloadActions.created):
       return { 
         ...state,
         [action.payload.id]: {
@@ -28,7 +34,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
         },
       };
       
-      case 'WORKLOAD_UPDATE_STATUS': 
+      case getType(workloadActions.updateStatus):
         return {
           ...state,
           [action.payload.id]: {

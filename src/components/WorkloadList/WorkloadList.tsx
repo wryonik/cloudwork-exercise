@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { Action, State } from '../../state';
+import { RootAction, RootState } from '../../state';
 import { cancel } from '../../state/workloads/actions';
 import { WorkloadItem, WorkloadItemStateProps } from '../WorkloadItem';
 
@@ -36,11 +36,11 @@ const WorkloadList: React.SFC<WorkloadListProps> = ({ workloads, cancelWorkload 
 );
 
 
-const mapStateToProps = (state: State): WorkloadListStateProps => ({
+const mapStateToProps = (state: RootState): WorkloadListStateProps => ({
   workloads: Object.values(state.workloads),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>): WorkloadListDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<RootAction>): WorkloadListDispatchProps => ({
   cancelWorkload: (id: number) => dispatch(cancel({ id })),
 }) 
 
