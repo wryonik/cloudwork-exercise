@@ -19,11 +19,6 @@ export type Action = {
     id: number;
   };
 } | {
-  type: 'WORKLOAD_CHECK_STATUS';
-  payload: {
-    id: number;
-  };
-} | {
   type: 'WORKLOAD_UPDATE_STATUS';
   payload: {
     id: number;
@@ -50,13 +45,6 @@ export const created = ({ id, status, complexity, completeDate }: { id: number, 
 
 export const cancel = ({ id }: { id: number }): Action => ({
   type: 'WORKLOAD_CANCEL',
-  payload: {
-    id,
-  },
-});
-
-export const checkStatus = ({ id }: { id: number }): Action => ({
-  type: 'WORKLOAD_CHECK_STATUS',
   payload: {
     id,
   },
