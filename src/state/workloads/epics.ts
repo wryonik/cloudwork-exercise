@@ -1,4 +1,4 @@
-import { combineEpics, Epic, ofType } from 'redux-observable';
+import { combineEpics, Epic } from 'redux-observable';
 import { filter, map, tap, ignoreElements } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 
@@ -7,13 +7,6 @@ import * as workloadsActions from './actions';
 
 
 type AppEpic = Epic<RootAction, RootAction, RootState>;
-
-
-// import { WorkloadService } from './services';
-// const workloadService = new WorkloadService();
-// workloadService.create({ complexity: 1 })
-//   .then(console.log.bind(console, 'workloadService create'));
-
 
 const logWorkloadSubmissions: AppEpic = (action$, state$) => (
   action$.pipe(
