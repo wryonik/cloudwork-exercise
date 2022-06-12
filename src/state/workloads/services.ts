@@ -49,10 +49,10 @@ export class WorkloadService {
   public cancel({ id }: { id: number }) {
     const work = this.getWorkload(id);
     if (!work) return Promise.reject('Workload not found');
-    if (work.status !== 'WORKING') return Promise.reject('Workload cannot be canceled');
+    if (work.status !== 'WORKING') return Promise.reject('Workload cannot be cancelled');
 
     clearTimeout(work.timer)
-    work.status = 'CANCELED';
+    work.status = 'CANCELLED';
 
     return Promise.resolve(work);
   }
