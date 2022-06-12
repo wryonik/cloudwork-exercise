@@ -1,1 +1,92 @@
 /* .App {} */
+
+* {
+  margin: 0;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.Navbar {
+  background-color: rgba(92, 97, 240, 1);
+  color: white;
+  padding: 16px 48px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.WorkloadContainer {
+  /* background-color: rgba(29, 32, 37, 1); */
+  background-color: rgb(20, 22, 27);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 80px;
+  height: calc(100vh - 132px);
+}
+
+.WorkloadItem {
+  border: 1px solid rgba(64, 67, 72, 1);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  display: flex;;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.WorkloadItem-timeAgo {
+    font-size: 12px !important;
+    font-style: italic;
+    margin-right: 16px;
+}
+
+.WorkloadListContainer {
+    border: 1px solid rgba(64, 67, 72, 1);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    height: 60vh;
+    overflow-y: scroll;
+    min-width: 70vw;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.WorkloadItem-heading {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.WorkloadItem-subHeading {
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+.WorkloadItem-statusText {
+    text-transform: capitalize;
+}
+
+.WorkloadList {
+    width: 100%;
+    padding: 0;
+}
+
+.Button {
+  border: none;
+  background-color: rgba(67, 56, 202, 1);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+}

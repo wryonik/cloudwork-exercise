@@ -48,7 +48,7 @@ class WorkloadForm extends React.PureComponent<WorkloadFormProps, WorkloadFormSt
         </div>
 
         <div>
-          <button onClick={this.handleSubmit} type="submit">Start work</button>
+          <button className='Button' onClick={this.handleSubmit} type="submit">Start work</button>
         </div>
       </form>
     );

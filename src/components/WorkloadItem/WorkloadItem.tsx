@@ -29,9 +29,9 @@ const WorkloadItem: React.SFC<WorkloadItemProps> = (props) => (
       {props.status === 'WORKING'
         ? (
           <>
-            <span><TimeAgo date={props.completeDate} /></span>
+            <span className='WorkloadItem-timeAgo'><TimeAgo date={props.completeDate} /></span>
             <button 
-              className="WorkloadItem-secondaryButton" 
+              className="WorkloadItem-secondaryButton Button" 
               onClick={props.onCancel}
             >
               Cancel
